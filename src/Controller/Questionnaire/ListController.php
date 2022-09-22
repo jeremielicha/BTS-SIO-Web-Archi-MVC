@@ -20,9 +20,7 @@ class ListController implements ControllerInterface
         $questionnaireModel = new QuestionnaireModel();
 
         // Si y a pas de GET alors j'affiche tout
-        return TwigCore::getEnvironment()->render(
-            'questionnaire/list.html.twig',
-            [
+        return TwigCore::getEnvironment()->render('questionnaire/list.html.twig', [
                 'questionnaires' => $questionnaireModel->getFechAll()
             ]);
     }
