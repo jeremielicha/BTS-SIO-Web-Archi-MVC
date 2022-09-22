@@ -19,7 +19,7 @@
     },
     "scripts": {
         "start": [  "Composer\\Config::disableProcessTimeout",
-                    "php -S localhost:8042 -t public"],
+                    "php -S localhost:8000 -t public"],
         "test": "php vendor/bin/phpunit --testdox tests"
     },
     "require-dev": {
