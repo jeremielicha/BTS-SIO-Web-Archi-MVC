@@ -3,7 +3,6 @@
 namespace Quizz\Controller;
 
 use Quizz\Core\View\TwigCore;
-use Quizz\Model\questionnaireModel;
 use Quizz\Core\Controller\ControllerInterface;
 
 class HomeController implements ControllerInterface

@@ -33,4 +33,16 @@ class EtudiantModel
         }
         return $tabEtudiant;
     }
+
+    public function insertEtudiant($utilisateur,$mdp,$nom,$prenom,$email){
+        //$cost=['cost'=>12];
+        $requete=$this->bdd->prepare('INSERT INTO etudiants(login, nom, prenom, email, motDePasse) VALUES(:login, :nom, :prenom, :email, :motDePasse)');
+        $requete->execute(array(
+            'login' => $utilisateur,
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'email' => $email,
+            'motDePasse' => $mdp
+        ));
+    }
 }

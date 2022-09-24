@@ -10,16 +10,17 @@
     <table class="table">
         <tr>
             <th>Nom d'utilisateur</th>
-            <th>Nom</th>
-            <th>Prenom</th>
             <th>Email</th>
+            <th>Editer</th>
         </tr>
         {% for value in etudiants %}
             <tr>
                 <td>{{ value.getLogin }}</td>
-                <td>{{ value.getNom }}</td>
-                <td>{{ value.getPrenom }}</td>
                 <td>{{ value.getEmail }}</td>
+                <td>
+                    <input type="button" value="Modifier" class="btn-outline-primary">
+                    <input type="button" value="Supprimer" class="btn-danger">
+                </td>
             </tr>
         {% endfor %}
     </table>

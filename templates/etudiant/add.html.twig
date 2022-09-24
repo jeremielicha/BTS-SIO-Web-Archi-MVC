@@ -3,5 +3,34 @@
 {% block title %}Etudiant - Ajouter{% endblock %}
 
 {% block content %}
-
+    <br>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Nom utilisateur</label>
+            <input type="text" class="form-control" name="utilisateur">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Mot de passe</label>
+            <input type="text" class="form-control" name="mdp">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Nom</label>
+            <input type="text" class="form-control" name="nom">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Prenom</label>
+            <input type="text" class="form-control" name="prenom">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <br>
+    </form>
 {% endblock %}
