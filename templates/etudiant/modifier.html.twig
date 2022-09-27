@@ -1,12 +1,12 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Etudiant - Ajouter{% endblock %}
+{% block title %}Etudiant - Modifier{% endblock %}
 
 {% block content %}
-    <br>
-    <form action="" method="post">
+    <h4>Modifier</h4>
+    <form action="/etudiant/{{ etudiant.getIdEtudiant }}/modifier" method="post">
         <div class="form-group">
-            <label for="formGroupExampleInput">Nom utilisateur</label>
+            <label for="formGroupExampleInput">Nom utilisateur ({{ etudiant.getLogin }})</label>
             <input type="text" class="form-control" name="utilisateur">
         </div>
         <br>
@@ -16,24 +16,24 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Nom</label>
+            <label for="formGroupExampleInput2">Nom ({{ etudiant.getNom }})</label>
             <input type="text" class="form-control" name="nom">
         </div>
         <br>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Prenom</label>
+            <label for="formGroupExampleInput2">Prenom ({{ etudiant.getPrenom }})</label>
             <input type="text" class="form-control" name="prenom">
         </div>
         <br>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Email</label>
+            <label for="formGroupExampleInput2">Email ({{ etudiant.getEmail }})</label>
             <input type="text" class="form-control" name="email">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="submit" class="btn-outline-primary">Modifier</button>
+        <a href="/etudiant/{{ etudiant.getIdEtudiant }}">
+            <input type="button" value="Annuler" class="btn-danger">
+        </a>
         <br>
-        {% if alert==true %}
-            <p class="alert-success">Etudiant ajouté</p>
-        {% endif %}
     </form>
 {% endblock %}

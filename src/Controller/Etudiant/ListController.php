@@ -8,9 +8,10 @@ use Quizz\Model\EtudiantModel;
 
 class ListController implements ControllerInterface
 {
+
     public function inputRequest(array $tabInput)
     {
-        // TODO: Implement inputRequest() method.
+
     }
 
     public function outputEvent()
@@ -19,5 +20,6 @@ class ListController implements ControllerInterface
         return TwigCore::getEnvironment()->render('etudiant/list.html.twig', [
             'etudiants' => $etudiantModel->getFetchAll()
         ]);
+
     }
 }

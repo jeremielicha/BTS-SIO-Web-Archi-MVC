@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Etudiant - Infos{% endblock %}
+
+{% block content %}
+    <h4>Informations</h4>
+    <div class="card">
+        <div class="card-header">
+            Nom d'utilisateur
+        </div>
+        <li class="list-group-item">{{ etudiant.getLogin }}</li>
+        <div class="card-header">
+            Nom
+        </div>
+        <li class="list-group-item">{{ etudiant.getNom }}</li>
+        <div class="card-header">
+            Prénom
+        </div>
+        <li class="list-group-item">{{ etudiant.getPrenom }}</li>
+        <div class="card-header">
+            Email
+        </div>
+        <li class="list-group-item">{{ etudiant.getEmail }}</li>
+    </div>
+    <br>
+    <a href="/etudiant/{{ etudiant.getIdEtudiant }}/modifier">
+        <input type="button" value="Modifier" class="btn-outline-primary">
+    </a>
+    <a href="/etudiant">
+        <input type="button" value="Annuler" class="btn-danger">
+    </a>
+    {% if alert==true %}
+        <p class="alert-danger">ERREUR</p>
+    {% endif %}
+{% endblock %}

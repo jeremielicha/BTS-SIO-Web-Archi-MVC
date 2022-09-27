@@ -13,13 +13,18 @@
             <th>Email</th>
             <th>Editer</th>
         </tr>
-        {% for value in etudiants %}
+        {% for etudiant in etudiants %}
             <tr>
-                <td>{{ value.getLogin }}</td>
-                <td>{{ value.getEmail }}</td>
+                <td>{{ etudiant.getLogin }}</td>
+                <td>{{ etudiant.getEmail }}</td>
                 <td>
-                    <input type="button" value="Modifier" class="btn-outline-primary">
-                    <input type="button" value="Supprimer" class="btn-danger">
+                    <a href="/etudiant/{{ etudiant.idEtudiant }}">
+                        <input type="button" value="Voir" class="btn-outline-primary">
+                    </a>
+                    <a href="/etudiant/{{ etudiant.idEtudiant }}/del">
+                        <input type="button" value="Supprimer" class="btn-danger">
+                    </a>
+
                 </td>
             </tr>
         {% endfor %}
