@@ -8,7 +8,7 @@ use Quizz\Model\EtudiantModel;
 class ModifierController implements \Quizz\Core\Controller\ControllerInterface
 {
     private int $id;
-
+    private array $tabPost;
     public function inputRequest(array $tabInput)
     {
         $etudiantModel=new EtudiantModel();
@@ -22,7 +22,7 @@ class ModifierController implements \Quizz\Core\Controller\ControllerInterface
     {
         $etudiantModel=new EtudiantModel();
         if (isset($this->tabPost["utilisateur"], $this->tabPost["mdp"] , $this->tabPost["nom"] , $this->tabPost["prenom"] , $this->tabPost["email"])){
-            $etudiantModel->modifierEtudiant($this->id,$this->tabPost["utilisateur"],$this->tabPost["mdp"],$this->tabPost["nom"],$this->tabPost["prenom"],$this->tabPost["email"]);
+            $etudiantModel->modifierEtudiant($this->id,$this->tabPost["utilisateur"],password_hash($this->tabPost["mdp"],PASSWORD_DEFAULT),$this->tabPost["nom"],$this->tabPost["prenom"],$this->tabPost["email"]);
         }
         return TwigCore::getEnvironment()->render("etudiant/modifier.html.twig",[
             'etudiant'=>$etudiantModel->getFetch($this->id)
